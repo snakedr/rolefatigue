@@ -1,4 +1,7 @@
 ---
+import '../styles/global.css';
+import '../scripts/autotest.js';
+
 interface Props {
 	title: string;
 	description: string;
@@ -31,8 +34,6 @@ const { title, description, ogImage } = Astro.props;
     <meta property="twitter:description" content={description}>
     {ogImage && <meta property="twitter:image" content={Astro.url.origin + ogImage}>}
 
-    <link rel="stylesheet" href="../styles/global.css">
-    <script src="../scripts/autotest.js"></script>
 </head>
 <body>
     <slot />
