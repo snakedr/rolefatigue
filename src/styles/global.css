@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.75;
+}
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/img/hero.webp");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.7);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  text-align: center;
+  padding: 3rem;
+}
+
+.hero-content h1 {
+  font-size: 3.6rem;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.article {
+  max-width: 760px;
+  margin: 4rem auto 6rem;
+  padding: 0 1.5rem;
+}
+
+h2 {
+  font-size: 2.1rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.2rem;
+  scroll-margin-top: 2rem; /* Adds space above anchor when jumping from TOC */
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+ul {
+  margin: 1.5rem 0 2rem 1.5rem;
+}
+
+li {
+  margin-bottom: 0.6rem;
+}
+
+a {
+  color: #111;
+  text-decoration: underline;
+}
+
+.references ol {
+  padding-left: 1.5rem;
+}
+
+.references li {
+  margin-bottom: 1rem;
+  font-size: 0.95em;
+}
+
+/* Autotest Styles */
+.autotest-form {
+  border: 1px solid #ddd;
+  padding: 1.5rem 2rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.autotest-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.autotest-item:last-child {
+  margin-bottom: 0;
+}
+
+.autotest-item input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: 0.25em;
+  margin-right: 0.75rem;
+  cursor: pointer;
+}
+
+.autotest-item label {
+  cursor: pointer;
+}
+
+.autotest-result {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+/* Table of Contents Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+.toc {
+  display: none; /* Hidden by default, shown via media query */
+}
+
+.toc-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.toc-list {
+  padding-left: 0;
+  list-style-type: none;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.toc-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.toc-list a {
+  text-decoration: none;
+  color: #555;
+}
+
+.toc-list a:hover {
+  text-decoration: underline;
+  color: #111;
+}
+
+/* Make TOC sticky on larger screens */
+@media (min-width: 1200px) {
+  .toc {
+    display: block;
+    position: fixed;
+    top: 4rem;
+    left: calc((100vw - 1200px) / 2); /* Position nicely on the side */
+    width: 260px;
+    font-size: 0.9em;
+  }
+
+  .article {
+    max-width: 700px;
+    margin: 4rem auto 6rem;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 19px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+}

@@ -1,0 +1,40 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content={Astro.url.origin + Astro.url.pathname}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    {ogImage && <meta property="og:image" content={Astro.url.origin + ogImage}>}
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content={Astro.url.origin + Astro.url.pathname}>
+    <meta property="twitter:title" content={title}>
+    <meta property="twitter:description" content={description}>
+    {ogImage && <meta property="twitter:image" content={Astro.url.origin + ogImage}>}
+
+    <link rel="stylesheet" href="../styles/global.css">
+    <script src="../scripts/autotest.js"></script>
+</head>
+<body>
+    <slot />
+</body>
+</html>
