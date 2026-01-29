@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import '../scripts/autotest.js';
 
 interface Props {
 	title: string;
@@ -37,5 +36,6 @@ const { title, description, ogImage } = Astro.props;
 </head>
 <body>
     <slot />
+    <script src="/scripts/autotest.js"></script>
 </body>
 </html>
