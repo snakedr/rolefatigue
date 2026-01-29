@@ -3,17 +3,18 @@ body {
   background: #ffffff;
   color: #111;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  line-height: 1.75;
+  font-size: 16px; /* Reduced base font size */
+  line-height: 1.7;
 }
 
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: 60vh; /* Reduced height slightly */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  text-align: center;
 }
 
 .hero-bg {
@@ -34,37 +35,36 @@ body {
 
 .hero-content {
   position: relative;
-  max-width: 900px;
-  text-align: center;
-  padding: 3rem;
+  max-width: 800px;
+  padding: 2rem;
 }
 
 .hero-content h1 {
-  font-size: 3.6rem;
+  font-size: 3rem; /* Adjusted relative to new base */
   line-height: 1.15;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-size: 1.4rem;
+  font-size: 1.25rem; /* Adjusted relative to new base */
   color: #333;
 }
 
 .article {
-  max-width: 760px;
+  max-width: 720px; /* Slightly adjusted for new font size */
   margin: 4rem auto 6rem;
   padding: 0 1.5rem;
 }
 
 h2 {
-  font-size: 2.1rem;
+  font-size: 2rem; /* Adjusted */
   margin-top: 3.5rem;
   margin-bottom: 1.2rem;
   scroll-margin-top: 2rem; /* Adds space above anchor when jumping from TOC */
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Adjusted */
   margin-top: 2.5rem;
   margin-bottom: 0.5rem;
 }
@@ -150,27 +150,34 @@ html {
 }
 
 .toc {
-  display: none; /* Hidden by default, shown via media query */
+  max-width: 720px; /* Match article width */
+  margin: 0 auto 3rem auto; /* Center it and add space below */
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fdfdfd;
 }
 
 .toc-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Adjusted */
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.75rem;
 }
 
 .toc-list {
   padding-left: 0;
   list-style-type: none;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  columns: 2; /* Create two columns for a more compact look */
+  column-gap: 2rem;
 }
 
 .toc-list li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   line-height: 1.5;
 }
 
@@ -184,30 +191,18 @@ html {
   color: #111;
 }
 
-/* Make TOC sticky on larger screens */
-@media (min-width: 1200px) {
-  .toc {
-    display: block;
-    position: fixed;
-    top: 4rem;
-    left: calc((100vw - 1200px) / 2); /* Position nicely on the side */
-    width: 260px;
-    font-size: 0.9em;
-  }
-
-  .article {
-    max-width: 700px;
-    margin: 4rem auto 6rem;
-    padding: 0 1.5rem;
-  }
-}
+/* Remove complex media queries for TOC positioning */
 
 @media (max-width: 768px) {
   body {
-    font-size: 19px;
+    font-size: 16px; /* Keep it consistent */
   }
 
   .hero-content h1 {
-    font-size: 2.6rem;
+    font-size: 2.2rem; /* Adjust for mobile */
+  }
+
+  .toc-list {
+    columns: 1; /* Single column on smaller screens */
   }
 }
